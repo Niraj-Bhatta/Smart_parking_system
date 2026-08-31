@@ -1,0 +1,87 @@
+{
+  "smartParking": {
+    "live": {
+      "alarms": {
+        "active": true,
+        "gas": true,
+        "temperature": false
+      },
+      "connection": {
+        "badPackets": 0,
+        "synchronized": true,
+        "unoOnline": true,
+        "unoSeesEsp": true,
+        "validPackets": 1277,
+        "wifiRssi": -36
+      },
+      "device": {
+        "uptimeMs": 639626
+      },
+      "distancesCm": {
+        "entry": 27,
+        "exit": 16,
+        "slotP1": 28,
+        "slotP2": 63
+      },
+      "environment": {
+        "humidityPct": 57.8,
+        "mq2Raw": 3223,
+        "mq2WarmedUp": true,
+        "temperatureC": 29.8
+      },
+      "fare": {
+        "currency": "NPR",
+        "incrementPerInterval": 1,
+        "intervalSeconds": 10,
+        "resetDelaySeconds": 5,
+        "slots": {
+          "P1": {
+            "completedSessions": 60,
+            "durationSeconds": 0,
+            "fareRupees": 0,
+            "occupied": false,
+            "resetPending": false,
+            "sessionActive": false
+          },
+          "P2": {
+            "completedSessions": 52,
+            "durationSeconds": 0,
+            "fareRupees": 0,
+            "occupied": false,
+            "resetPending": false,
+            "sessionActive": false
+          },
+          "P3": {
+            "completedSessions": 9,
+            "durationSeconds": 0,
+            "fareRupees": 0,
+            "occupied": false,
+            "resetPending": false,
+            "sessionActive": false
+          },
+          "P4": {
+            "completedSessions": 2,
+            "durationSeconds": 0,
+            "fareRupees": 0,
+            "occupied": false,
+            "resetPending": false,
+            "sessionActive": false
+          }
+        }
+      },
+      "gates": {
+        "entryOpen": true,
+        "exitOpen": true
+      },
+      "sequence": 1305,
+      "slots": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": false,
+        "freeCount": 4,
+        "occupiedCount": 0
+      }
+    }
+  }
+}

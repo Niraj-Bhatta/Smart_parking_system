@@ -1,0 +1,58 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "smartParking": {
+      "live": {
+        ".read": true,
+        ".write": true,
+        ".validate": "newData.hasChildren(['sequence','connection','distancesCm','slots','gates','environment','alarms','device'])",
+        "sequence": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "connection": {
+          ".validate": "newData.hasChildren(['unoOnline','unoSeesEsp','synchronized','validPackets','badPackets','wifiRssi'])"
+        },
+        "distancesCm": {
+          "$sensor": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 500"
+          }
+        },
+        "slots": {
+          "P1": { ".validate": "newData.isBoolean()" },
+          "P2": { ".validate": "newData.isBoolean()" },
+          "P3": { ".validate": "newData.isBoolean()" },
+          "P4": { ".validate": "newData.isBoolean()" },
+          "occupiedCount": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 4"
+          },
+          "freeCount": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 4"
+          }
+        },
+        "gates": {
+          "entryOpen": { ".validate": "newData.isBoolean()" },
+          "exitOpen": { ".validate": "newData.isBoolean()" }
+        }
+      },
+      "slots": {
+        ".read": true,
+        "$slotId": {
+          ".write": "auth != null"
+        }
+      },
+      "bookings": {
+        ".read": true,
+        "$bookingId": {
+          ".write": "auth != null"
+        }
+      },
+      "users": {
+        "$userId": {
+          ".read": true,
+          ".write": "auth != null"
+        }
+      }
+    }
+  }
+}
