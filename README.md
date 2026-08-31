@@ -1,16 +1,34 @@
-# React + Vite
+# 🅿️ Kalki — Real-Time IoT Smart Parking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Kalki is a full-stack smart parking solution that pairs a **React + Vite web console** with an **ESP32/Arduino sensor network** to track parking slot occupancy in real time. Drivers can view live slot availability, reserve a spot, and get automatic confirmation/expiration handling, while admins get a live diagnostics and analytics dashboard — all synced through **Firebase Realtime Database**.
 
-Currently, two official plugins are available:
+Built by **Niraj Bhatta**, **Soniya Chand**, and **Ravi Yadav**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Live Dashboard** — real-time slot occupancy (Vacant / Reserved / Occupied) driven by ultrasonic + IR sensor data
+- **Slot Booking Flow** — reserve a slot with a 15-minute arrival deadline and a 5-minute safety confirmation window, with automatic expiration if you don't show up or confirm
+- **Automatic State Transitions** — a background daemon (`server-timer.js`) reconciles sensor readings with booking state (reserved → occupied, occupied → vacant, spontaneous arrivals, expirations)
+- **Admin Panel** — live device diagnostics (Wi-Fi RSSI, packet health, gas/temperature alarms), booking history/filtering, and usage analytics charts (via Recharts)
+- **Sandbox Mode** — the app automatically falls back to an offline sandbox if Firebase authentication fails, so the UI stays usable without a live backend
+- **Hardware Layer** — ESP32 + Arduino Uno reading ultrasonic distance sensors (per-slot + entry/exit), an MQ2 gas sensor, temperature/humidity, and gate control
+- **Fare Metering** — per-slot session tracking with configurable rate (NPR) and interval-based billing
+- **Developer/Team Page** — project credits and roles
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🏗️ Tech Stack
+
+| Layer          | Technology                                             |
+|----------------|---------------------------------------------------------|
+| Frontend       | React 19, React Router 7, Vite, Tailwind CSS            |
+| Charts/Icons   | Recharts, lucide-react, @icons-pack/react-simple-icons  |
+| Backend/Realtime | Firebase Realtime Database + Firebase Auth (anonymous) |
+| Hardware       | ESP32, Arduino Uno, ultrasonic + IR sensors, MQ2 gas sensor |
+| Tooling        | Oxlint, PostCSS, Autoprefixer                            |
+
+---
+
+## 📁 Project Structure
