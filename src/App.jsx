@@ -200,7 +200,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Smart_parking_system">
       <AppContent />
     </Router>
   );
