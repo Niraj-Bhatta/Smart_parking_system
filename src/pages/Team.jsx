@@ -13,7 +13,7 @@ const teamMembers = [
     name: "Niraj Bhatta",
     role: "Web Integration and Firebase",
     description: "Designed the real-time driver dashboard, console interface system, and responsive web layouts.",
-    photo: "/member_niraj.jpg",
+    photo: `${import.meta.env.BASE_URL}member_niraj.jpg`,
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Soniya Chand",
     role: "Hardware integration and Testing",
     description: "Architected the ESP32 sensor mesh network, firmware diagnostics, and serial communication protocols.",
-    photo: "/member_soniya.jpeg",
+    photo: `${import.meta.env.BASE_URL}member_soniya.jpeg`,
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -35,7 +35,7 @@ const teamMembers = [
     name: "Ravi Yadav",
     role: "Embedded Systems Developer",
     description: "Engineered dual-sensor aggregation logic, Firebase database integration, and telemetry pipelines.",
-    photo: "/member_ravi.jpg",
+    photo: `${import.meta.env.BASE_URL}member_ravi.jpg`,
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",

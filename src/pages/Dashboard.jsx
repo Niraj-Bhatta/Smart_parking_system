@@ -99,7 +99,7 @@ export default function Dashboard({ liveData, isConnected }) {
         {/* Smart Parking Photo Banner */}
         <div className="max-w-4xl w-full px-4 mb-8">
           <img 
-            src="/smart_parking.png" 
+            src={`${import.meta.env.BASE_URL}smart_parking.png`} 
             alt="Kalki Smart Parking Installation" 
             className="w-full h-80 md:h-96 object-cover rounded-lg border border-kalki-border opacity-85 select-none pointer-events-none shadow-lg shadow-kalki-bg/80"
           />
